@@ -1,0 +1,48 @@
+{
+  "name": "app-tpl-md",
+  "version": "0.0.0",
+  "description": "Estructura básica para la creación de aplicaciones web basadas en AngularJS.",
+  "authors": [
+    "Maxi Nivoli <m_nivoli@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "angular-mocks": "latest",
+    "sinon": "http://sinonjs.org/releases/sinon-1.12.1.js",
+    "bardjs": "latest"
+  },
+  "dependencies": {
+    "jquery": "latest",
+    "angular": "latest",
+    "angular-material": "latest",
+    "angular-material-icons": "latest",
+    "angular-animate": "latest",
+    "angular-messages": "latest",
+    "angular-sanitize": "latest",
+    "angular-ui-router": "latest",
+    "angular-jwt": "latest",
+    "angular-loading-bar": "latest",
+    "a0-angular-storage": "latest",
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.0",
+    "toastr": "latest",
+    "moment": "latest",
+    "angular-resource": "latest",
+    "angular-cookies": "latest",
+    "angular-i18n": "latest",
+    "moment-timezone": "latest",
+    "angular-clipboard": "latest"
+  },
+  "overrides": {
+    "angular-i18n": {
+      "main": [
+        "angular-locale_es-ar.js"
+      ]
+    }
+  }
+}
