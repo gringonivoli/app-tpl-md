@@ -2,8 +2,15 @@
     'use strict';
 
     angular.module('app.core', [
-        'ngMaterial', 'ngMdIcons', 'ngAnimate', 'ngSanitize', 'ngMessages', 'ngResource',
+        'ngAnimate',
+        'ngAria',
         'ngCookies',
+        'ngMessages',
+        'ngResource',
+        'ngRoute',
+        'ngSanitize',
+        'ngMaterial',
+        'ngMdIcons',
 
         'blocks.exception', 'blocks.logger', 'blocks.router',
         'blocks.auth',
@@ -11,8 +18,6 @@
 
         'ui.router',
         'angular-storage',
-        'angular-jwt', 'angular-loading-bar',
-        'angularUtils.directives.dirPagination',
-        'angular-clipboard'
+        'angular-jwt', 'angular-loading-bar'
     ]);
 })();
