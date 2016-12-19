@@ -1,23 +1,33 @@
-(function () {
+(function() {
     'use strict';
+
+    // Usage:
+    //
+    // Creates:
+    //
 
     angular
         .module('app.login')
-        .controller('LoginOLDController', LoginOLDController);
+        .component('login', {
+            templateUrl: 'src/client/app/login/login.component.html',
+            controller: LoginController,
+            controllerAs: 'vm',
+            bindings: {
+            }
+        });
 
-    LoginOLDController.$inject = ['auth', 'validateService', 'datacontext', 'broadcast'];
-    function LoginOLDController(auth, validateService, datacontext, broadcast) {
+    LoginController.$inject = ['auth', 'validateService', 'datacontext', 'broadcast'];
+    function LoginController(auth, validateService, datacontext, broadcast) {
 
         var vm = this;
         vm.validate = validateService;
         vm.auth = authenticate;
 
-        activate();
-
         ////////////////
 
-        function activate() {
-        }
+        vm.onInit = function() { };
+        vm.onChanges = function(changesObj) { };
+        vm.onDestory = function() { };
 
         function authenticate() {
             if (vm.validate.form(vm.loginForm)) {

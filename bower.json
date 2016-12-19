@@ -40,7 +40,8 @@
     "toastr": "latest",
     "moment": "latest",
     "moment-timezone": "latest",
-    "angular-material-sidenav": "latest"
+    "angular-material-sidenav": "latest",
+    "angular-slimscroll": "^1.1.5"
   },
   "overrides": {
     "angular-i18n": {

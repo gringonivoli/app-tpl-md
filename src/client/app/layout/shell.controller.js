@@ -3,10 +3,10 @@
 
     angular
         .module('app.layout')
-        .controller('ShellController', ShellController);
+        .controller('ShellOLDController', ShellOLDController);
 
-    ShellController.$inject = ['$scope', 'config'];
-    function ShellController($scope, config) {
+    ShellOLDController.$inject = ['$scope', 'config'];
+    function ShellOLDController($scope, config) {
 
         var vm = this;
         vm.user = {};

@@ -1,0 +1,42 @@
+<md-content class="md-content-transparent" layout="row" layout-align="space-around" ng-cloak>
+    <md-card flex="flex" flex-gt-xs="50" flex-gt-sm="40" flex-gt-md="33" class="md-whiteframe-5dp">
+        <img src="src/client/images/defaultLogo2.png" class="md-card-image" alt="logo">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2><span>Inicio de Sesión</span></h2>
+            </div>
+        </md-toolbar>
+        <md-card-content>
+            <form name="vm.loginForm" novalidate>
+                <md-input-container class="md-icon-float md-icon-left md-block">
+                    <label>Username</label>
+                    <md-icon>perm_identity</md-icon>
+                    <input type="email" ng-model="vm.user.username" name="username" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"
+                        required>
+                    <div ng-messages="vm.loginForm.username.$error" role="alert">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                            El email no es válido.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-icon-float md-icon-left md-block">
+                    <label>Password</label>
+                    <md-icon>lock_outline</md-icon>
+                    <input type="password" ng-model="vm.user.password" name="password" minlength="6" maxlength="100" required>
+                    <div ng-messages="vm.loginForm.password.$error" role="alert">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength']">
+                            El campo es obligatorio.
+                        </div>
+                        <div ng-message-exp="['minlength', 'maxlength']">
+                            El campo debe ser de entre 10 y 100 caracteres.
+                        </div>
+                    </div>
+                </md-input-container>
+                <a ui-sref="shell.dashboard">test</a>
+                <div layout="row" layout-align="end center">
+                    <md-button ng-disabled="!vm.loginForm.$valid" click-and-disable="vm.auth()" class="md-raised md-primary">Iniciar sesión</md-button>
+                </div>
+            </form>
+        </md-card-content>
+    </md-card>
+</md-content>

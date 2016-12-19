@@ -14,7 +14,7 @@
 
     var config = {
         appErrorPrefix: '[App Error] ',
-        appTitle: 'App-Tpl',
+        appTitle: 'App-Tpl-Md',
         appStateNoAuth: 'login',
         appNoAuthMsg: 'Ups! Parece que no puedes acceder a esta ruta.',
         appNoAuthTitle: 'Ruta inaccesible',
@@ -31,10 +31,12 @@
 
     configure.$inject = ['$logProvider', 'routerHelperProvider',
         'exceptionHandlerProvider', 'authProvider', '$httpProvider',
-        'jwtInterceptorProvider', 'storeProvider', '$mdThemingProvider'];
+        'jwtInterceptorProvider', 'storeProvider', '$mdThemingProvider',
+        'ssSideNavSectionsProvider'];
     /* @ngInject */
     function configure($logProvider, routerHelperProvider, exceptionHandlerProvider,
-        authProvider, $httpProvider, jwtInterceptorProvider, storeProvider, $mdThemingProvider) {
+        authProvider, $httpProvider, jwtInterceptorProvider, storeProvider, $mdThemingProvider,
+        ssSideNavSectionsProvider) {
 
         if ($logProvider.debugEnabled) {
             $logProvider.debugEnabled(true);
@@ -45,6 +47,8 @@
         configureAuth();
         configureRouterHelper();
         configureTheming();
+
+        ssSideNavSectionsProvider.initWithTheme($mdThemingProvider);
 
         ///////////////////
 

@@ -16,8 +16,8 @@
         'blocks.auth',
         'blocks.history',
 
-        'ui.router',
+        'ui.router', 'sasrio.angular-material-sidenav',
         'angular-storage',
-        'angular-jwt', 'angular-loading-bar'
+        'angular-jwt', 'angular-loading-bar', 'ui.slimscroll'
     ]);
 })();

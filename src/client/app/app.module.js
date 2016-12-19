@@ -24,6 +24,7 @@
         /*
          * Feature areas
          */
-        'app.login'
+        'app.login',
+        'app.dashboard'
     ]);
 })();
