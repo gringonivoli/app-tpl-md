@@ -1,0 +1,17 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Menu Button" ng-click="vm.toggle()" hide-gt-md>
+            <md-icon>menu</md-icon>
+        </md-button>
+
+        <md-button ng-show="vm.isModal" class="md-icon-button" aria-label="Back Button">
+            <md-icon>arrow_back</md-icon>
+        </md-button>
+
+        <h2 hide-gt-md>{{vm.appTitle}}</h2> <ng-md-icon icon="chevron_right"></ng-md-icon> {{vm.title}}
+
+        <span flex></span>
+
+        <div ng-transclude></div>
+    </div>
+</md-toolbar>

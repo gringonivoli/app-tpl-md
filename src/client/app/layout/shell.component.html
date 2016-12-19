@@ -1,44 +1,31 @@
 <div layout="row" class="shell-component" flex>
     <md-sidenav class="md-sidenav-left md-whiteframe-z2"
-    md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+    md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" style="overflow: hidden;">
 
         <header class="nav-header" ss-style-color="{'background-color': 'primary.default'}">
             <a ng-href="#/" class="logo">
                 <h1 class="md-heading">{{vm.appTitle}}</h1>
             </a>
+            <div class="user-profile">
+                <md-button>
+                    <img src="src/client/images/user.jpg" class="avatar" alt="user image">
+                    max@power.com
+                </md-button>
+                <div layout="row" layout-align="space-around center" class="more-info">
+                    <md-button>logout</md-button>
+                    <div flex>
+                        <ng-md-icon icon="home" size="20"></ng-md-icon> <span>Las Perdices &nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                </div>
+            </div>
         </header>
 
-        <md-content slimscroll="{height: '100%', alwaysVisible: true}" flex role="navigation" class="md-content-ss-sidenav" ss-style-color="{'background-color': 'primary.default'}">
+        <md-content slimscroll="{height: '100%'}" flex role="navigation" class="md-content-ss-sidenav" ss-style-color="{'background-color': 'primary.default'}">
             <ss-sidenav flex menu="vm.menu"></ss-sidenav>
         </md-content>
     </md-sidenav>
 
     <div layout="column" flex role="main">
-        <md-toolbar>
-            <div class="md-toolbar-tools">
-                <md-button class="md-icon-button" aria-label="Menu Button" ng-click="vm.toggle()" hide-gt-sm>
-                    <md-icon>menu</md-icon>
-                </md-button>
-
-                <h2 hide-gt-sm>{{vm.appTitle}}</h2>
-
-                <span flex></span>
-                <md-menu md-position-mode="target-right target" >
-                <md-button aria-label="Open profile menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
-                    <md-icon md-menu-origin>more_vert</md-icon>
-                </md-button>
-                <md-menu-content width="4" >
-                    <md-menu-item ng-repeat="item in [1, 2, 3]">
-                        <md-button ng-click="ctrl.announceClick($index)">
-                            <div layout="row" flex>
-                                <p flex>Option {{item}}</p>
-                            </div>
-                        </md-button>
-                    </md-menu-item>
-                </md-menu-content>
-                </md-menu>
-            </div>
-        </md-toolbar>
-        <div ui-view layout="column"></div>
+        <div ui-view slimscroll="{height: '100%', alwaysVisible: true}" layout="column"></div>
     </div>
 </div>

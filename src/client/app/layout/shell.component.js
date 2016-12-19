@@ -20,6 +20,9 @@
 
         var vm = this;
         ssSideNav.sections = [{
+                id: 'toogle_1',
+                name: 'Section Heading 2',
+                type: 'heading',
                 children: [{
                     name: 'Toogle 1',
                     type: 'toggle',

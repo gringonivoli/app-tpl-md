@@ -11,6 +11,7 @@
         .component('dashboard', {
             templateUrl: 'src/client/app/dashboard/dashboard.component.html',
             controller: DashboardController,
+            controllerAs: 'vm',
             bindings: {
             },
         });
@@ -19,6 +20,7 @@
     function DashboardController() {
 
         var vm = this;
+        vm.title = 'Dashboard';
 
         ////////////////
 
