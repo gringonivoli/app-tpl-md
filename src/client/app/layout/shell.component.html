@@ -1,5 +1,5 @@
 <div layout="row" class="shell-component" flex>
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2"
+    <md-sidenav class="md-sidenav-left md-whiteframe-5dp"
     md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" style="overflow: hidden;">
 
         <header class="nav-header" ss-style-color="{'background-color': 'primary.default'}">
@@ -25,7 +25,6 @@
         </md-content>
     </md-sidenav>
 
-    <div layout="column" flex role="main">
-        <div ui-view slimscroll="{height: '100%', alwaysVisible: true}" layout="column"></div>
+    <div style="overflow: hidden;" ui-view layout="column" flex role="main">
     </div>
 </div>

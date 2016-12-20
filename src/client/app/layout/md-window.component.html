@@ -1,0 +1,12 @@
+<div>
+    <toolbar title="{{vm.title}}">
+        <md-button aria-label="Open profile menu" class="md-icon-button">
+            <md-icon md-menu-origin>search</md-icon>
+        </md-button>
+    </toolbar>
+    <md-button class="md-fab md-fab-bottom-right md-accent" ng-click="vm.newi()" aria-label="Create a new User">
+        <md-icon>add</md-icon>
+    </md-button>
+    <div ng-transclude class="window-content">
+    </div>
+</div>

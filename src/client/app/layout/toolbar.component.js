@@ -27,9 +27,9 @@
 
         ////////////////
 
-        vm.onInit = function() { };
-        vm.onChanges = function(changesObj) { };
-        vm.onDestory = function() { };
+        vm.$onInit = function() { };
+        vm.$onChanges = function(changesObj) { };
+        vm.$onDestory = function() { };
 
         function toggle() {
             $mdSidenav('left').toggle();

@@ -175,21 +175,17 @@
                 }]
             }];
         vm.menu = ssSideNav;
-        vm.toggle = toggle;
         vm.appTitle = config.appTitle;
         vm.prefix = config.appTitle + ':';
 
         ////////////////
 
-        vm.onInit = function() {
+        vm.$onInit = function() {
             setUser();
         };
-        vm.onChanges = function(changesObj) { };
-        vm.onDestory = function() { };
-
-        function toggle() {
-            $mdSidenav('left').toggle();
-        }
+        vm.$onChanges = function(changesObj) { };
+        vm.$onDestory = function() { };
+        vm.$postLink = function() { };
 
         function setUser() {
             $scope.$on('userLogged', function (event, user) {
