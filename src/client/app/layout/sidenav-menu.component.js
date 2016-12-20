@@ -8,15 +8,17 @@
 
     angular
         .module('app.layout')
-        .component('shell', {
-            templateUrl: 'src/client/app/layout/shell.component.html',
-            controller: ShellController,
+        .component('sidenavMenu', {
+            templateUrl: 'src/client/app/layout/sidenav-menu.component.html',
+            controller: SidenavMenuController,
             controllerAs: 'vm',
-            bindings: {}
+            bindings: {
+                title: '@appTitle'
+            }
         });
 
-    ShellController.$inject = ['ssSideNav', 'config'];
-    function ShellController(ssSideNav, config) {
+    SidenavMenuController.$inject = ['ssSideNav', '$scope'];
+    function SidenavMenuController(ssSideNav, $scope) {
 
         var vm = this;
         ssSideNav.sections = [{
@@ -175,14 +177,41 @@
                 }]
             }];
         vm.menu = ssSideNav;
-        vm.appTitle = config.appTitle;
-        vm.prefix = config.appTitle + ':';
+        vm.element = null;
 
         ////////////////
 
-        vm.$onInit = function() { };
-        vm.$onChanges = function(changesObj) { };
-        vm.$onDestory = function() { };
-        vm.$postLink = function() { };
+        vm.$onInit = function() {
+            setUser();
+        };
+        vm.$onChanges = function(changesObj) {
+        };
+        vm.$onDestory = function() {
+            vm.element.slimScroll({destroy: true});
+            $(window, 'body').off('resize', resizer);
+        };
+
+        vm.$postLink = function() {
+            scrollMenu();
+            $(window, 'body').resize(resizer);
+        };
+
+        function scrollMenu() {
+            vm.element = vm.element || $('.menu-sidenav-menu');
+            vm.element.slimScroll({destroy: true});
+            vm.element.slimScroll({
+                'height': ($(window).height() - 188) + 'px'
+            });
+        }
+
+        function setUser() {
+            $scope.$on('userLogged', function (event, user) {
+                vm.user = user;
+            });
+        }
+
+        function resizer() {
+            scrollMenu();
+        }
     }
 })();

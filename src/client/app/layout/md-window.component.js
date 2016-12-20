@@ -23,28 +23,32 @@
     function MdWindowController($timeout) {
 
         var vm = this;
+        vm.element = null;
 
         ////////////////
 
         vm.$onInit = function() {};
         vm.$onChanges = function(changesObj) { };
         vm.$onDestory = function() {
-            $('.window-content').slimScroll({destroy: true});
+            vm.element.slimScroll({destroy: true});
+            $(window, 'body').off('resize', resizer);
         };
 
         vm.$postLink = function() {
             scrollContent();
-            $(window, 'body').resize(function () {
-                console.info('scroll again!');
-                scrollContent();
-            });
+            $(window, 'body').resize(resizer);
         };
 
         function scrollContent() {
-            $('.window-content').slimScroll({destroy: true});
-            $('.window-content').slimScroll({
+            vm.element = vm.element || $('.window-content');
+            vm.element.slimScroll({destroy: true});
+            vm.element.slimScroll({
                 'height': ($(window).height() - 64) + 'px'
             });
+        }
+
+        function resizer() {
+            scrollContent();
         }
     }
 })();

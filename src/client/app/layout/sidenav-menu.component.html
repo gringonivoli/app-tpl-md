@@ -1,0 +1,22 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" style="overflow: hidden;">
+    <header class="nav-header" ss-style-color="{'background-color': 'primary.default'}">
+        <a ng-href="#/" class="logo">
+            <h1 class="md-heading">{{vm.title}}</h1>
+        </a>
+        <div class="user-profile">
+            <md-button>
+                <img src="src/client/images/user.jpg" class="avatar" alt="user image"> max@power.com
+            </md-button>
+            <div layout="row" layout-align="space-around center" class="more-info">
+                <md-button>logout</md-button>
+                <div flex>
+                    <ng-md-icon icon="home" size="20"></ng-md-icon> <span>Las Perdices &nbsp;&nbsp;&nbsp;</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <md-content class="menu-sidenav-menu" flex role="navigation" class="md-content-ss-sidenav" ss-style-color="{'background-color': 'primary.default'}">
+        <ss-sidenav flex menu="vm.menu"></ss-sidenav>
+    </md-content>
+</md-sidenav>
