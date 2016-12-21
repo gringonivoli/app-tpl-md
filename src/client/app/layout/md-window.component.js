@@ -19,36 +19,33 @@
             },
         });
 
-    MdWindowController.$inject = ['$timeout'];
-    function MdWindowController($timeout) {
+    MdWindowController.$inject = ['$mdMedia'];
+    function MdWindowController($mdMedia) {
 
         var vm = this;
-        vm.element = null;
+        var content = null;
 
         ////////////////
 
         vm.$onInit = function() {};
         vm.$onChanges = function(changesObj) { };
         vm.$onDestory = function() {
-            vm.element.slimScroll({destroy: true});
-            $(window, 'body').off('resize', resizer);
+            content.slimScroll({destroy: true});
+            $(window, 'body').off('resize', scrollContent);
         };
 
         vm.$postLink = function() {
             scrollContent();
-            $(window, 'body').resize(resizer);
+            $(window, 'body').resize(scrollContent);
         };
 
         function scrollContent() {
-            vm.element = vm.element || $('.window-content');
-            vm.element.slimScroll({destroy: true});
-            vm.element.slimScroll({
-                'height': ($(window).height() - 64) + 'px'
+            content = content || $('.content-md-window');
+            var toolbarHeight = $mdMedia('gt-sm') ? 64 : ($mdMedia('gt-xs') ? 48 : 56);
+            content.slimScroll({destroy: true});
+            content.slimScroll({
+                'height': ($(window).height() - toolbarHeight) + 'px'
             });
-        }
-
-        function resizer() {
-            scrollContent();
         }
     }
 })();

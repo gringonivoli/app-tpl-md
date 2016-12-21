@@ -177,7 +177,7 @@
                 }]
             }];
         vm.menu = ssSideNav;
-        vm.element = null;
+        var ssSidenav = null;
 
         ////////////////
 
@@ -187,20 +187,21 @@
         vm.$onChanges = function(changesObj) {
         };
         vm.$onDestory = function() {
-            vm.element.slimScroll({destroy: true});
-            $(window, 'body').off('resize', resizer);
+            ssSidenav.slimScroll({destroy: true});
+            $(window, 'body').off('resize', scrollMenu);
         };
 
         vm.$postLink = function() {
             scrollMenu();
-            $(window, 'body').resize(resizer);
+            $(window, 'body').resize(scrollMenu);
         };
 
         function scrollMenu() {
-            vm.element = vm.element || $('.menu-sidenav-menu');
-            vm.element.slimScroll({destroy: true});
-            vm.element.slimScroll({
-                'height': ($(window).height() - 188) + 'px'
+            ssSidenav = ssSidenav || $('.menu-sidenav-menu');
+            var headerHeight = 188;
+            ssSidenav.slimScroll({destroy: true});
+            ssSidenav.slimScroll({
+                'height': ($(window).height() - headerHeight) + 'px'
             });
         }
 
@@ -208,10 +209,6 @@
             $scope.$on('userLogged', function (event, user) {
                 vm.user = user;
             });
-        }
-
-        function resizer() {
-            scrollMenu();
         }
     }
 })();
