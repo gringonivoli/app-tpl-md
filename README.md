@@ -1,17 +1,17 @@
-# app-tpl
+# app-tpl-md
 Estructura básica para la creación de aplicaciones web utilizando [AngularJS](https://github.com/angular/angular.js). Se tomaron varias ideas y buenas prácticas de los repos y publicaciones de [John Papa](https://github.com/johnpapa).
 
 # blocks.auth, blocks.history y blocks.*
-Se agregaron dos módulos reutilizables. blocks.auth para la autenticación contra un servidor utilizando JWT y blocks.history para simular la navegación que ofrecen las pantallas modales, sin tener pantallas modales. Los demás módulos blocks.* estan tomados de varios ejemplos realizados por [John Papa](https://github.com/johnpapa). 
+Se agregaron dos módulos reutilizables. blocks.auth para la autenticación contra un servidor utilizando JWT y blocks.history para simular la navegación que ofrecen las pantallas modales, sin tener pantallas modales. Los demás módulos blocks.* estan tomados de varios ejemplos realizados por [John Papa](https://github.com/johnpapa).
 
 # jshintrc y jscsrc
 La configuración de jshint y jscs fueron tomadas de [Angular 1 Style Guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md).
 
 # gulpfile.js y gulp.config.js
-Se tomo como base [pluralsight-gulp](https://github.com/johnpapa/pluralsight-gulp), se realizaron algunas modificaciones y se obviaron algunas partes, esto no quiere decir que esas partes sean malas, solo que no se utilizarón.
+Se tomo como base [pluralsight-gulp](https://github.com/johnpapa/pluralsight-gulp), se realizaron algunas modificaciones y se obviaron algunas partes, esto no quiere decir que esas partes sean malas, solo que no se utilizaron.
 
 # Estilos CSS
-Se utilizó [Bootstrap](https://github.com/twbs/bootstrap) como base y se agregaron los estilos de [AdminLTE](https://github.com/almasaeed2010/AdminLTE).
+Se utilizó [Angular Material](https://github.com/angular/material/tree/v1.1.1) como base.
 
 # server
 Para el backend se utilizó [Siervo](https://github.com/gringonivoli/siervo) un nano framework php y [Firebase jwt-php](https://github.com/firebase/php-jwt) para la autenticación por medio de JWT. Los demas paquetes php no deberían ser necesarios para comenzar. Se uso php para el backend por una cuestión de comodidad, pero se podría utilizar cualquier otra tecnología.
