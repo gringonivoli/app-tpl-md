@@ -19,7 +19,6 @@
         'app.layout',
         'app.decorators',
         'app.shared',
-        'app.widgets',
 
         /*
          * Feature areas

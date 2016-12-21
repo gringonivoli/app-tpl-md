@@ -18,6 +18,6 @@
 
         'ui.router', 'sasrio.angular-material-sidenav',
         'angular-storage',
-        'angular-jwt', 'angular-loading-bar', 'ui.slimscroll'
+        'angular-jwt', 'angular-loading-bar'
     ]);
 })();
