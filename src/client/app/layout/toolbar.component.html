@@ -5,10 +5,12 @@
         </md-button>
 
         <md-button ng-show="vm.isModal" class="md-icon-button" aria-label="Back Button">
-            <md-icon>arrow_back</md-icon>
+            <md-icon>navigate_before</md-icon>
         </md-button>
 
-        <h2 hide-gt-md hide-xs>{{vm.appTitle}}</h2> <ng-md-icon hide-gt-md hide-xs icon="chevron_right"></ng-md-icon> {{vm.title}}
+        <h2 hide-gt-md hide-xs>{{vm.appTitle}}</h2>
+        <ng-md-icon hide-gt-md hide-xs icon="chevron_right"></ng-md-icon>
+        {{vm.toolbarTitle}}
 
         <span flex></span>
 

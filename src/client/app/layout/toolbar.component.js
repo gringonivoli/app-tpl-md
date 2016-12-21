@@ -14,7 +14,7 @@
             controller: ToolbarController,
             controllerAs: 'vm',
             bindings: {
-                title: '@'
+                toolbarTitle: '@'
             }
         });
 

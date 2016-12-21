@@ -14,7 +14,7 @@
             controller: MdWindowController,
             controllerAs: 'vm',
             bindings: {
-                title: '@toolbarTitle',
+                toolbarTitle: '@',
                 newi: '&?'
             },
         });

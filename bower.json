@@ -22,6 +22,7 @@
   ],
   "dependencies": {
     "jquery": "latest",
+    "slimscroll": "latest",
     "angular": "latest",
     "angular-material": "latest",
     "angular-material-icons": "latest",
@@ -40,8 +41,7 @@
     "toastr": "latest",
     "moment": "latest",
     "moment-timezone": "latest",
-    "angular-material-sidenav": "latest",
-    "angular-slimscroll": "^1.1.5"
+    "angular-material-sidenav": "latest"
   },
   "overrides": {
     "angular-i18n": {

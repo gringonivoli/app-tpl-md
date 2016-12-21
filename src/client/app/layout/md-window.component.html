@@ -1,5 +1,5 @@
 <div>
-    <toolbar class="toolbar-md-window" title="{{vm.title}}">
+    <toolbar class="toolbar-md-window" toolbar-title="{{vm.toolbarTitle}}">
         <md-button hide-xs hide-sm aria-label="Nuevo" class="md-icon-button">
             <md-tooltip md-direction="bottom">
                 Nuevo
@@ -50,9 +50,6 @@
             </md-menu-content>
         </md-menu>
     </toolbar>
-    <md-button class="md-fab md-fab-bottom-right md-accent" ng-click="vm.newi()" aria-label="Create a new User">
-        <md-icon>add</md-icon>
-    </md-button>
     <div ng-transclude class="content-md-window">
     </div>
 </div>

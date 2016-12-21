@@ -26,7 +26,7 @@
                 children: [{
                     name: 'Toogle 1',
                     type: 'toggle',
-                    icon: 'more_vert',
+
                     pages: [{
                         id: 'toogle_1_link_1',
                         name: 'item 1',
@@ -46,8 +46,7 @@
                 id: 'link_1',
                 name: 'Link 1 ',
                 state: 'login',
-                type: 'link',
-                icon: 'more_vert'
+                type: 'link'
             }, {
                 id: 'link_2',
                 name: 'Link 2',
@@ -77,7 +76,7 @@
                 children: [{
                     name: 'Toogle 1',
                     type: 'toggle',
-                    icon: 'more_vert',
+
                     pages: [{
                         id: 'toogle_2_link_1',
                         name: 'item 1',
@@ -97,8 +96,7 @@
                 id: 'link_2_1',
                 name: 'Link 1 ',
                 state: 'login',
-                type: 'link',
-                icon: 'more_vert'
+                type: 'link'
             }, {
                 id: 'link_2_2',
                 name: 'Link 2',
@@ -127,7 +125,7 @@
                 children: [{
                     name: 'Toogle 1',
                     type: 'toggle',
-                    icon: 'more_vert',
+
                     pages: [{
                         id: 'toogle_3_link_1',
                         name: 'item 1',
@@ -147,8 +145,7 @@
                 id: 'link_1',
                 name: 'Link 1 ',
                 state: 'login',
-                type: 'link',
-                icon: 'more_vert'
+                type: 'link'
             }, {
                 id: 'link_2',
                 name: 'Link 2',
