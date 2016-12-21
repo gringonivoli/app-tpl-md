@@ -54,9 +54,9 @@
 
         function configureTheming() {
             $mdThemingProvider.theme('default')
-            .primaryPalette('indigo')
-            .accentPalette('green')
-            .warnPalette('red');//.dark();
+                .primaryPalette('blue')
+                .accentPalette('green')
+                .warnPalette('red');//.dark();
         }
 
         function configureExceptionHandler() {

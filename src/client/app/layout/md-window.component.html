@@ -1,8 +1,54 @@
 <div>
     <toolbar class="toolbar-md-window" title="{{vm.title}}">
-        <md-button aria-label="Open profile menu" class="md-icon-button">
+        <md-button hide-xs hide-sm aria-label="Nuevo" class="md-icon-button">
+            <md-tooltip md-direction="bottom">
+                Nuevo
+            </md-tooltip>
+            <md-icon md-menu-origin>add</md-icon>
+        </md-button>
+        <md-button hide-xs hide-sm aria-label="Buscar" class="md-icon-button">
+            <md-tooltip md-direction="bottom">
+                Buscar
+            </md-tooltip>
             <md-icon md-menu-origin>search</md-icon>
         </md-button>
+        <md-button hide-xs hide-sm aria-label="Imprimir" class="md-icon-button">
+            <md-tooltip md-direction="bottom">
+                Imprimir
+            </md-tooltip>
+            <md-icon md-menu-origin>print</md-icon>
+        </md-button>
+        <md-menu hide-gt-sm md-position-mode="target-right target">
+            <md-button aria-label="Abrir menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <md-icon>more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button ng-click="ctrl.announceClick($index)">
+                        <div layout="row" flex>
+                            <p flex>Nuevo</p>
+                            <!--<md-icon md-menu-align-target style="margin: auto 3px auto 0;">add</md-icon>-->
+                        </div>
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="ctrl.announceClick($index)">
+                        <div layout="row" flex>
+                            <p flex>Buscar</p>
+                            <!--<md-icon md-menu-align-target style="margin: auto 3px auto 0;">search</md-icon>-->
+                        </div>
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="ctrl.announceClick($index)">
+                        <div layout="row" flex>
+                            <p flex>Imprimir</p>
+                            <!--<md-icon md-menu-align-target style="margin: auto 3px auto 0;">print</md-icon>-->
+                        </div>
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
     </toolbar>
     <md-button class="md-fab md-fab-bottom-right md-accent" ng-click="vm.newi()" aria-label="Create a new User">
         <md-icon>add</md-icon>

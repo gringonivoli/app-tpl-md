@@ -15,8 +15,8 @@
             bindings: {}
         });
 
-    ShellController.$inject = ['ssSideNav', 'config'];
-    function ShellController(ssSideNav, config) {
+    ShellController.$inject = ['ssSideNav', 'config', '$scope'];
+    function ShellController(ssSideNav, config, $scope) {
 
         var vm = this;
         ssSideNav.sections = [{
@@ -177,12 +177,35 @@
         vm.menu = ssSideNav;
         vm.appTitle = config.appTitle;
         vm.prefix = config.appTitle + ':';
+        var _ssSidenav = null;
 
         ////////////////
 
         vm.$onInit = function() { };
         vm.$onChanges = function(changesObj) { };
-        vm.$onDestory = function() { };
-        vm.$postLink = function() { };
+        vm.$onDestory = function() {
+            _ssSidenav.slimScroll({destroy: true});
+            $(window, 'body').off('resize', scrollMenu);
+        };
+
+        vm.$postLink = function() {
+            scrollMenu();
+            $(window, 'body').resize(scrollMenu);
+        };
+
+        function scrollMenu() {
+            _ssSidenav = _ssSidenav || $('.menu-sidenav-menu');
+            var headerHeight = 188;
+            _ssSidenav.slimScroll({destroy: true});
+            _ssSidenav.slimScroll({
+                'height': ($(window).height() - headerHeight) + 'px'
+            });
+        }
+
+        function setUser() {
+            $scope.$on('userLogged', function (event, user) {
+                vm.user = user;
+            });
+        }
     }
 })();
