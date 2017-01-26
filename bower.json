@@ -41,7 +41,7 @@
     "toastr": "latest",
     "moment": "latest",
     "moment-timezone": "latest",
-    "angular-material-sidenav": "latest"
+    "woper-angular-material-sidenav": "latest"
   },
   "overrides": {
     "angular-i18n": {
@@ -49,7 +49,7 @@
         "angular-locale_es-ar.js"
       ]
     },
-    "angular-material-sidenav": {
+    "woper-angular-material-sidenav": {
       "main": [
         "angular-material-sidenav.js",
         "angular-material-sidenav.css"

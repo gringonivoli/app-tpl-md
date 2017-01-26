@@ -8,11 +8,24 @@
                 <h1 class="md-heading">{{vm.appTitle}}</h1>
             </a>
             <div class="user-profile">
-                <md-button>
-                    <img src="src/client/images/user.jpg" class="avatar" alt="user image"> max@power.com
-                </md-button>
+                <md-menu md-position-mode="target-right target">
+                    <a href="#" class="md-raised md-primary md-button" ng-click="$mdOpenMenu($event)">
+                        <img src="src/client/images/user.jpg" class="avatar" alt="user image"> max@power.com
+                    </a>
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button ng-click="ctrl.announceClick($index)">
+                                Logout
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="ctrl.announceClick($index)">
+                                Perfil
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
                 <div layout="row" layout-align="space-around center" class="more-info">
-                    <md-button>logout</md-button>
                     <div flex>
                         <ng-md-icon icon="home" size="20"></ng-md-icon> <span>Las Perdices &nbsp;&nbsp;&nbsp;</span>
                     </div>
